@@ -1,18 +1,18 @@
-#script permettant de convertir les sous titre ASS/SSA en SRT, à placer dans le répertoire contenant les fichiers à modifier.
-#NE PAS OUBLIER DE METTRE "ffmpeg.exe" au même endroit que le PS1
+#script to convert ASS/SSA subtitles to SRT, to be placed in the directory containing the files to be modified.
+#DO NOT FORGET TO PLACE "ffmpeg.exe" in the same place as the PS1
 
-#recupération des chemins des fichiers
+#get file paths
 [System.Collections.ArrayList]$files = Get-ChildItem | foreach { $_.Name }
 
-#exceptions à enlever du tableau 
+#exceptions to be removed from the table
 $exceptions = @("ffmpeg_ass-to-srt.ps1","ffmpeg.exe")
 
-#enleve les exceptions du tableau
+#remove the exceptions from the table
 foreach ($exception in $exceptions){
     $files.Remove($exception)
 }
 
-#traitement sur les fichiers
+#processing on files
 Foreach ($file in $files) {
 	
 	$path = [io.path]::GetFileNameWithoutExtension($file)
