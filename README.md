@@ -5,3 +5,5 @@ This script work with the executable of ffmpeg : https://github.com/FFmpeg/FFmpe
 It permit convert all ASS or SSA subtiles in MKV files to SRT(UTF-8).
 
 Simply put the script and the ffmpeg exe on the directory which contain the mkv file with ASS subs and execute it.
+
+New .MKV files will be created with SRT subtitles by default : [DEFAULT-NAME]-SRT.mkv
